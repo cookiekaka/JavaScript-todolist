@@ -1,0 +1,82 @@
+.todo-list {
+  display: flow-root;
+  width: 500px;
+  margin: 10px auto 0 auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 30px;
+}
+
+.todo-list-btn, .clear-done {
+  float: right;
+  margin-top: 5px;
+  padding: 2px 8px;
+  font-size: 12px;
+  line-height: 16px;
+  color: #fff;
+  background-color: #da4f49;
+  border: 1px solid #bd362f;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-input {
+  width: 480px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.todo-item-li {
+  float: left;
+  width: 480px;
+  padding: 0 5px;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  list-style-type: none;
+}
+
+.todo-item-li:last-of-type {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 8px;
+}
+
+.todo-main input:checked+span {
+  text-decoration: line-through;
+}
+
+.no-todo {
+  float: left;
+  width: 480px;
+  border: 1px solid #ccc;
+  margin-bottom: 8px;
+  text-align: center;
+  display: none;
+}
+
+.todo-footer-label {
+  float: left;
+  margin-left: 6px;
+}
+
+.select-all {
+  margin-right: 9px;
+}
+
+.footer-info {
+  float: left;
+  margin-left: 20px;
+}
+
+.done-count {
+  color: rgb(25, 161, 25);
+}
+
+.clear-done {
+  margin-right: 10px;
+}

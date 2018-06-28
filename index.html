@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>原生js todolist</title>
+		<link rel="stylesheet" href="layout.css">
+	</head>
+	<body>
+    <div class="todo-list">
+      <form class="form" action="javascript:onAddTodo()">
+        <input class="add-input" type="text" placeholder="请输入任务名称，按回车键确认">
+      </form>
+      <div class="todo-main">
+        <div class="no-todo">恭喜您已完成所有任务</div>
+      </div>
+      <div>
+        <label class="todo-footer-label">
+          <input type="checkbox" class="select-all"><span>全选</span>
+        </label>
+        <span class="footer-info">
+          <span>已完成</span>
+          <span class="done-count"></span>
+          <span>/全部</span>
+          <span class="todo-count"></span>
+        </span>
+        <button class="clear-done">清除已完成任务</button>
+      </div>
+    </div>
+    <script src="main.js"></script>
+	</body>
+</html>
