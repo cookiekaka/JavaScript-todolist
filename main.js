@@ -1,3 +1,4 @@
+// 与todoList为全局变量（框架）相比，这种缓存数据的格式具有优势：操作单个todo时，读写localStorage 的指定id的数据即可，不用读写整个todoList
 // Model ----------------------------------------------------------------------------------------------------------------------------
 
 /* 获取getID */
@@ -50,7 +51,6 @@ window.onload = onLoading;
 function onLoading() {
   // localStorage.clear();
   let todoList = getTodoData();
-  console.log(todoList);
   for (let todoItem of todoList) {
     renderTodoDOM(todoItem);
   }
@@ -143,7 +143,6 @@ function onSelectAll(checked) {
   for (let todoItem of todoList) {
     todoItem.isDone = checked;
     setTodoData(todoItem.id, todoItem);
-    console.log(todoItem);
     changeCheckedDOM(todoItem);
   }
   checked && renderDoneCountDOM(todoList.length);
@@ -173,6 +172,10 @@ function onCalTodoCount(todoList) {
 // View ----------------------------------------------------------------------------------------------------------------------------
 
 /* 绑定监听器 */
+document.querySelector('.add-input').addEventListener('keydown', (e) => {
+  e.keyCode && onAddTodo();
+});
+
 document.querySelector('.todo-main').addEventListener('click', (e) => {
   /* 删除单项任务 */
   if(e.target && e.target.nodeName.toUpperCase() === 'BUTTON') {
@@ -225,7 +228,6 @@ function changeCheckedDOM(todoItem) {
     document.getElementById(`input-${todoItem.id}`).setAttribute('checked', true);
     document.getElementById(`input-${todoItem.id}`).checked = true;
   } else {
-    console.log(todoItem.id);
     document.getElementById(`input-${todoItem.id}`).removeAttribute('checked');
     document.getElementById(`input-${todoItem.id}`).checked = false;
   }
