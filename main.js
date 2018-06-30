@@ -54,9 +54,9 @@ function onLoading() {
   for (let todoItem of todoList) {
     renderTodoDOM(todoItem);
   }
-  onUpdateCount(todoList);
+  handleUpdateCount(todoList);
 
-  onCheckedAll();
+  handleCheckedAll();
 }
 
 /* 添加单项任务 */
@@ -72,22 +72,22 @@ function onAddTodo() {
     isDone: false,
   }
   setTodoData(id, todoItem);
-  onUpdateCount();
+  handleUpdateCount();
 
   resetFormDOM();
   renderTodoDOM(todoItem);
 
-  onCheckedAll();
+  handleCheckedAll();
 }
 
 /* 删除单项任务 */
 function onDeleteTodo(id) {
   deleteTodoData(id);
-  onUpdateCount();
+  handleUpdateCount();
 
   deleteTodoDOM(id);
 
-  onCheckedAll();
+  handleCheckedAll();
 }
 
 /* 改变选框状态 */
@@ -100,11 +100,11 @@ function onChangeChecked(id, checked) {
 
   // changeCheckedDOM(todoItem);
 
-  onCheckedAll();
+  handleCheckedAll();
 }
 
 /* 监测是否所有任务完成 */
-function onCheckedAll() {
+function handleCheckedAll() {
   let todoList = getTodoData();
   let doneCount = 0;
   for (let todoItem of todoList) {
@@ -132,9 +132,9 @@ function onClearDone() {
       deleteTodoDOM(todoItem.id);
     }
   }
-  onUpdateCount();
+  handleUpdateCount();
 
-  onCheckedAll();
+  handleCheckedAll();
 }
 
 /* 全选 */
@@ -150,7 +150,7 @@ function onSelectAll(checked) {
 }
 
 /* 底部 已完成/全部 信息 */
-function onUpdateCount() {
+function handleUpdateCount() {
   let todoList = Array.from(arguments)[0] || getTodoData();
   onCalDoneCount(todoList);
   onCalTodoCount(todoList);
