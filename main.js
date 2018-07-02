@@ -173,7 +173,7 @@ function onCalTodoCount(todoList) {
 
 /* 绑定监听器 */
 document.querySelector('.add-input').addEventListener('keydown', (e) => {
-  e.keyCode && onAddTodo();
+  e.keyCode === 13 && onAddTodo();
 });
 
 document.querySelector('.todo-main').addEventListener('click', (e) => {
